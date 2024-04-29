@@ -20,4 +20,4 @@ It includes the basic usage of Wifi settings and pinout applications.
     </a>
 </div>
 
-<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/1.png" width="100">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/1.png" width="700">
