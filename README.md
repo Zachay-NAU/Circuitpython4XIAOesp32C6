@@ -151,7 +151,7 @@ while True:
 ```
 
 <img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-13%2001-22-47.png" width="700">
-<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4881.JPG" height="400">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4882.JPG" height="400">
 
 4. Analog Reading (Analog Mic)
 ```
@@ -171,7 +171,7 @@ while True:
     time.sleep(0.1)
 ```
 <img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-13%2001-30-42.png" width="700">
-<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4882.JPG" height="400">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4883.JPG" height="400">
 
 5. IIC(BME680)
 #### install sensor liberaries
