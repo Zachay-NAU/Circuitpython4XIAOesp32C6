@@ -21,31 +21,31 @@ It includes the basic usage of Wifi settings and pinout applications.
 
 ### Software
 
-1. Flash the Firmware with esptool
-#### enter bootloader mode
+#### Flash the Firmware with esptool
+1. enter bootloader mode
 ```
 Connected to computer, but no port number found for XIAO.
 The computer is connected and the port number appears, but the upload program fails.
 ```
 
-#### check the serial port in thr terminal
+2. check the serial port in thr terminal
 ```
 ls /dev/ttyACM*
 ```
 
-#### install esptool
+3. install esptool
 
 Note: You will need Python 3.7 or newer installed on your system
 ```
 pip install esptool
 ```
 
-#### erase flash
+4. erase flash
 ```
 esptool.py --chip esp32c6 --port /dev/ttyACM0 erase_flash
 ```
 
-#### download the firmware
+5. download the firmware
 <div class="download" style={{textAlign: 'center'}}>
     <a class="download the firmware here" href="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/seeed_xiao_esp32c6_firmware05032024.bin">
             <strong><span><font color={'FFFFFF'} size={"4"}> download the firmware here 🖱️</font></span></strong>
@@ -54,29 +54,31 @@ esptool.py --chip esp32c6 --port /dev/ttyACM0 erase_flash
 
 Then, open the file floder in terminal.
 
-#### flash the firmware
+6. flash the firmware
 ```
 esptool.py --chip esp32c6 --port /dev/ttyACM0 write_flash -z 0x0 seeed_xiao_esp32c6_firmware05032024.bin
 ```
 
-2. Set the software
+#### Set the software
 
-#### install and open Thonny
+1. install and open Thonny
 
-#### click "stop" button
+2. click "stop" button
 
-#### select interpreter
+3. select interpreter
 
-#### write code and click the green button to run
+4. write code and click the green button to run
 
-#### install liberaries
+5. install liberaries
 
-open the terminal
+6. open the terminal
 ```
 pip3 install adafruit-circuitpython-connectionmanager
 ```
 
-3. Blink Test
+#### CIrcuitpython demo
+
+1. Blink Test
 ```
 """Example for Seeed Studio XIAO ESP32C6. Blinks the built-in LED."""
 import time
@@ -94,7 +96,7 @@ while True:
     time.sleep(0.5)
     print("LED off")
 ```
-4. Wifi COnnection
+2. Wifi COnnection
 ```
 import time
 import ipaddress
@@ -107,7 +109,7 @@ print("my IP addr:", wifi.radio.ipv4_address)
 print("Connected!")
 ```
 
-5. DIgital Output (PIR Motion Sensor)
+3. DIgital Output (PIR Motion Sensor)
 ```
 import board
 import time
@@ -131,7 +133,7 @@ while True:
         print('Not detected!')
     time.sleep(1)
 ```
-6. Analog Reading (Analog Mic)
+4. Analog Reading (Analog Mic)
 ```
 import time
 import board
@@ -149,7 +151,7 @@ while True:
     time.sleep(0.1)
 ```
 
-7. IIC(BME680)
+5. IIC(BME680)
 #### install sensor liberaries
 ```
 import time
@@ -174,8 +176,7 @@ finally:  # unlock the i2c bus when ctrl-c'ing out of the loop
 
 
 ```
-
-8. UART(GPS)-NOT PASS
+6. UART(GPS)-NOT PASS
 ```
 import busio
 import board
