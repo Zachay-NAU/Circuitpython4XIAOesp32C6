@@ -32,6 +32,7 @@ The computer is connected and the port number appears, but the upload program fa
 ```
 ls /dev/ttyACM*
 ```
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-12%2023-41-14.png" width="700">
 
 3. install esptool
 
@@ -39,6 +40,7 @@ Note: You will need Python 3.7 or newer installed on your system
 ```
 pip install esptool
 ```
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-12%2023-43-21.png" width="700">
 
 4. erase flash
 ```
@@ -58,14 +60,23 @@ Then, open the file floder in terminal.
 ```
 esptool.py --chip esp32c6 --port /dev/ttyACM0 write_flash -z 0x0 seeed_xiao_esp32c6_firmware05032024.bin
 ```
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-12%2023-53-42.png" width="700">
 
 #### Set the software
 
 1. install and open Thonny
+<div class="download" style={{textAlign: 'center'}}>
+    <a class="download the firmware here" href="https://thonny.org/">
+            <strong><span><font color={'FFFFFF'} size={"4"}> Click here</font></span></strong>
+    </a>
+</div>
 
 2. click "stop" button
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-12%2023-57-37.png" width="700">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-12%2023-57-51.png" width="700">
 
 3. select interpreter
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-12%2023-59-15.png" width="700">
 
 4. write code and click the green button to run
 
@@ -96,6 +107,9 @@ while True:
     time.sleep(0.5)
     print("LED off")
 ```
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-13%2000-03-42.png" width="700">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4881.JPG" height="400">
+
 2. Wifi COnnection
 ```
 import time
@@ -108,8 +122,10 @@ print(wifi.radio.connect(ssid="UMASS fried chicken",password="Zacharyloveschicke
 print("my IP addr:", wifi.radio.ipv4_address)
 print("Connected!")
 ```
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-13%2001-08-11.png" width="700">
 
-3. DIgital Output (PIR Motion Sensor)
+3. DIgital Iutput (PIR Motion Sensor)
+
 ```
 import board
 import time
@@ -133,6 +149,10 @@ while True:
         print('Not detected!')
     time.sleep(1)
 ```
+
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-13%2001-22-47.png" width="700">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4881.JPG" height="400">
+
 4. Analog Reading (Analog Mic)
 ```
 import time
@@ -150,6 +170,8 @@ while True:
     print((get_voltage(analog_in),))
     time.sleep(0.1)
 ```
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-13%2001-30-42.png" width="700">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4882.JPG" height="400">
 
 5. IIC(BME680)
 #### install sensor liberaries
@@ -176,6 +198,9 @@ finally:  # unlock the i2c bus when ctrl-c'ing out of the loop
 
 
 ```
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/Screenshot%20from%202024-05-13%2002-24-12.png" width="700">
+<img src="https://github.com/Zachay-NAU/Circuitpython4XIAOesp32C6/blob/main/XIAOESPC6/IMG_4884.JPG" height="400">
+
 6. UART(GPS)-NOT PASS
 ```
 import busio
