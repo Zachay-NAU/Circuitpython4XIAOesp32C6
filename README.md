@@ -61,7 +61,7 @@ esptool.py --chip esp32c6 --port /dev/ttyACM0 write_flash -z 0x0 seeed_xiao_esp3
 
 2. Set the software
 
-#### open Thonny
+#### install and open Thonny
 
 #### click "stop" button
 
@@ -149,12 +149,49 @@ while True:
     time.sleep(0.1)
 ```
 
-7. IIC(Temperature Reading)
+7. IIC(BME680)
 #### install sensor liberaries
 ```
+import time
+import board
+
+# To use default I2C bus (most boards)
+i2c = board.I2C()  # uses board.SCL and board.SDA
+
+while not i2c.try_lock():
+    pass
+
+try:
+    while True:
+        print(
+            "I2C addresses found:",
+            [hex(device_address) for device_address in i2c.scan()],
+        )
+        time.sleep(2)
+
+finally:  # unlock the i2c bus when ctrl-c'ing out of the loop
+    i2c.unlock()
+
+
 ```
 
-8. UART(GPS)
+8. UART(GPS)-NOT PASS
+```
+import busio
+import board
+import time
+
+uart = busio.UART(board.TX, board.RX, baudrate=115200)
+
+while True:
+    uart.write(bytes([0x55]))
+    time.sleep(0.1)
+    data = uart.read(2)  # 2 byte return for distance.
+    if data:
+        dist = (data[1] + (data[0] << 8)) / 10
+        print("Distance: ", dist)
+    time.sleep(0.5)
+```
 
 
 
